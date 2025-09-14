@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yaramala Ganesh Reddy</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
       body {
@@ -74,6 +75,14 @@
           fill: #8B5CF6;
           transform: scale(1.1);
       }
+      #mobile-menu.is-open {
+          display: block;
+          animation: fadeIn 0.5s ease-out;
+      }
+      @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+      }
     </style>
 </head>
 <body class="bg-[#000000] text-gray-100">
@@ -82,17 +91,38 @@
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 p-4 md:p-6 backdrop-filter backdrop-blur-md bg-opacity-30 bg-gray-900 border-b border-gray-700">
         <nav class="flex justify-between items-center max-w-7xl mx-auto">
-            <h1 class="text-lg md:text-xl font-bold tracking-wide">YARAMALA GANESH REDDY</h1>
-            <div class="space-x-4 md:space-x-8 text-sm md:text-base font-medium">
-                <a href="#home" class="hover:text-violet-400 transition-colors duration-300">Home</a>
-                <a href="#about" class="hover:text-violet-400 transition-colors duration-300">About</a>
-                <a href="#projects" class="hover:text-violet-400 transition-colors duration-300">Projects</a>
-                <a href="#coding-profiles" class="hover:text-violet-400 transition-colors duration-300">Coding Profiles</a>
-                <a href="#certifications" class="hover:text-violet-400 transition-colors duration-300">Certifications</a>
-                <a href="#resume" class="hover:text-violet-400 transition-colors duration-300">Resume</a>
-                <a href="#contact" class="hover:text-violet-400 transition-colors duration-300">Contact</a>
+            <div class="flex items-center space-x-4">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white transition-colors duration-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <h1 class="text-lg md:text-xl font-bold tracking-wide">YARAMALA GANESH REDDY</h1>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-4 md:space-x-8 text-sm md:text-base font-medium">
+                <a href="#home" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-home mr-2"></i>Home</a>
+                <a href="#about" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-user-tie mr-2"></i>About</a>
+                <a href="#projects" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-project-diagram mr-2"></i>Projects</a>
+                <a href="#coding-profiles" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-code mr-2"></i>Coding Profiles</a>
+                <a href="#certifications" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-certificate mr-2"></i>Certifications</a>
+                <a href="#resume" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-file-alt mr-2"></i>Resume</a>
+                <a href="#contact" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-envelope mr-2"></i>Contact</a>
             </div>
         </nav>
+        
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-gray-900 bg-opacity-70 rounded-lg shadow-xl p-4 transition-all">
+            <div class="flex flex-col space-y-4 text-left text-sm">
+                <a href="#home" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-home mr-2"></i>Home</a>
+                <a href="#about" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-user-tie mr-2"></i>About</a>
+                <a href="#projects" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-project-diagram mr-2"></i>Projects</a>
+                <a href="#coding-profiles" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-code mr-2"></i>Coding Profiles</a>
+                <a href="#certifications" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-certificate mr-2"></i>Certifications</a>
+                <a href="#resume" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-file-alt mr-2"></i>Resume</a>
+                <a href="#contact" class="hover:text-violet-400 transition-colors duration-300 flex items-center"><i class="fas fa-envelope mr-2"></i>Contact</a>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -250,16 +280,16 @@
                 
                 <div class="space-y-4 flex flex-col justify-center items-center">
                     <a href="mailto:mr.ganeshreddyyaramala@mail.com" class="inline-flex items-center justify-center px-6 py-3 font-semibold text-white border-2 border-gray-500 rounded-lg hover:bg-gray-800 transition-colors duration-300 w-full">
-                        Email Me
+                        <i class="fas fa-envelope mr-2"></i>Email Me
                     </a>
-                    <div class="text-white border-2 border-gray-500 rounded-lg px-6 py-3 font-semibold transition-colors duration-300 w-full text-sm">
-                        Phone: +91 7386835812
-                    </div>
+                    <a href="tel:+917386835812" class="inline-flex items-center justify-center px-6 py-3 font-semibold text-white border-2 border-gray-500 rounded-lg hover:bg-gray-800 transition-colors duration-300 w-full">
+                        <i class="fas fa-phone mr-2"></i>Phone: +91 7386835812
+                    </a>
                     <a href="https://www.linkedin.com/in/ganesh-reddy-yaramala-025a50352/" target="_blank" class="inline-flex items-center justify-center px-6 py-3 font-semibold text-white border-2 border-gray-500 rounded-lg hover:bg-gray-800 transition-colors duration-300 w-full">
-                        Connect on LinkedIn
+                        <i class="fab fa-linkedin mr-2"></i>Connect on LinkedIn
                     </a>
                     <a href="https://github.com/Ganeshreddy210105" target="_blank" class="inline-flex items-center justify-center px-6 py-3 font-semibold text-white border-2 border-gray-500 rounded-lg hover:bg-gray-800 transition-colors duration-300 w-full">
-                        View my GitHub
+                        <i class="fab fa-github mr-2"></i>View my GitHub
                     </a>
                 </div>
                 
@@ -399,10 +429,30 @@
           observer.observe(section);
         });
       }
+
+      function setupMobileMenu() {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('is-open');
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('is-open');
+            });
+        });
+      }
+
       window.onload = function() {
         starryBackground();
         setupScrollBehavior();
         setupAnimations();
+        setupMobileMenu();
         document.querySelector('#home').classList.add('is-visible');
       };
     </script>
